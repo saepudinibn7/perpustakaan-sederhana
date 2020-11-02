@@ -14,6 +14,7 @@ export class Users {
 
   @Property({
     onCreate: (input: any) => bcryptjs.hashSync(input.password, 10),
+    onUpdate: (input: any) => bcryptjs.hashSync(input.password, 10),
   })
   password: string;
 
